@@ -32,7 +32,6 @@ set nohlsearch
 set laststatus=2
 set background=dark
 set belloff=all
-let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 2
 let g:netrw_liststyle = 3
 
@@ -42,7 +41,6 @@ if !has('nvim')
 endif
 
 " searching
-set magic
 set ignorecase
 set smartcase
 set incsearch
@@ -59,11 +57,6 @@ set undofile
 if has('nvim')
     let g:terminal_scrollback_buffer_size = 10000
 end
-
-" formatting
-" delete comment character when joining lines
-set formatoptions+=jn
-set nojoinspaces
 
 " polyglot
 let g:polyglot_disabled = ['latex']
@@ -150,16 +143,3 @@ xnoremap <Leader>: :<Up><CR>
 " toggle colorcolumn with <space>8
 set colorcolumn=81
 nnoremap <Leader>8 :call config#ToggleColorColumn()<CR>
-
-" Spelling related things
-if &spell
-    nnoremap <Leader>z 1z=
-
-    " Spelling corrections
-    abbreviate teh the
-end
-
-" finally load local vim configuration if it exists
-if filereadable($VIMHOME."/local.vim")
-    source $VIMHOME/local.vim
-endif
