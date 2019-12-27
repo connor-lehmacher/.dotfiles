@@ -1,6 +1,6 @@
 [user]
-    name = Devin Lehmacher
-    email = lehmacdj@gmail.com
+    name = Connor Lehmacher
+    email = clehmac@hotmail.com
 
 [push]
     default = simple
@@ -10,7 +10,6 @@
 
 [alias]
     # Convenient aliases
-    status = status -sb
     unstage = reset -q HEAD --
     amend = commit --amend
     last = log -1 HEAD
@@ -24,13 +23,6 @@
     pu = push
     co = checkout
     ci = commit
-
-[sendemail]
-    smtpuser = lehmacdj@gmail.com
-    smtpserver = smtp.googlemail.com
-    smtpencryption = tls
-    smtpserverport = 587
-    suppresscc = self
 
 [diff]
     tool = "(n)vimdiff"

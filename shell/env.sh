@@ -50,6 +50,9 @@ if [ -d "$HOME/.cargo" ]; then
     # export RUST_SRC_PATH="$HOME/.rustup/toolchains/$toolchain/lib/rustlib/src/rust/src"
 fi
 
+# Go
+cond_path_add "/usr/local/go/bin"
+
 # Homebrew
 if which brew >/dev/null 2>&1; then
     BREW_PREFIX="$(brew --prefix)"

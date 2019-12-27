@@ -65,6 +65,9 @@ end
 set formatoptions+=jn
 set nojoinspaces
 
+" polyglot
+let g:polyglot_disabled = ['latex']
+
 " deoplete
 if has('nvim')
     let g:deoplete#enable_at_startup = 1
