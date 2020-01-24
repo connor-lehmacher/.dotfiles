@@ -115,7 +115,7 @@ function gittree () {
 # Speedy git -- does git add -A, git commit <text>, and git push
 function gitfast () {
     git add -A
-    git commit -m "$@"
+    git commit -m "$*"
     git push
 }
 
