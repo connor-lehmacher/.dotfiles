@@ -112,6 +112,13 @@ function gittree () {
     done
 }
 
+# Speedy git -- does git add -A, git commit <text>, and git push
+function gitfast () {
+    git add -A
+    git commit -m "$@"
+    git push
+}
+
 # go up $1 directories in the hierarchy
 function up () {
     count="$1"

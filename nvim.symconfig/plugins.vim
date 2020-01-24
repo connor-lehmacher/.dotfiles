@@ -33,11 +33,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
     \| Plug 'junegunn/fzf.vim'
 
 " git
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-
-" syntax checking
-Plug 'neomake/neomake'
+" Plug 'tpope/vim-fugitive'
+" Plug 'airblade/vim-gitgutter'
 
 " jsonnet
 Plug 'google/vim-jsonnet'

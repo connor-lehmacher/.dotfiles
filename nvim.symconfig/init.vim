@@ -81,9 +81,6 @@ else
       \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 end
 
-" neomake
-autocmd BufWinEnter,BufWritePost * Neomake
-
 " Make backspace behave the way I expect
 set backspace=indent,eol,start
 
@@ -139,6 +136,8 @@ nnoremap <Leader>b :Buffers<CR>
 " run the last normal mode command
 nnoremap <Leader>: :<Up><CR>
 xnoremap <Leader>: :<Up><CR>
+" insert a single character
+" nnoremap <Leader>qqq
 
 " toggle colorcolumn with <space>8
 set colorcolumn=81
