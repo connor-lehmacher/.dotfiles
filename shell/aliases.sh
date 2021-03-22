@@ -113,6 +113,7 @@ function gittree () {
 }
 
 # Speedy git -- does git add -A, git commit <text>, and git push
+# For example    gitfast <commit message (there can be spaces here)>
 function gitfast () {
     git add -A
     git commit -m "$*"

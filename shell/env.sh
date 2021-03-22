@@ -14,11 +14,6 @@ fi
 export EDITOR
 export VISUAL
 
-if test "$EDITOR" = 'vim' || test "$EDITOR" = 'nvim'; then
-    # Use (n)vim for manpager if it is available
-    export MANPAGER="$EDITOR -c 'set ft=man' -"
-fi
-
 # System name
 [ "$(uname)" = "Darwin" ] && export DARWIN=1
 [ "$(uname)" = "Linux" ] && export LINUX=1
@@ -52,6 +47,12 @@ fi
 
 # Go
 cond_path_add "/usr/local/go/bin"
+
+# set up tex live
+cond_path_add "/usr/local/texlive/2019/bin/x86_64-linux" 
+MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH; export MANPATH
+INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH; export INFOPATH
+
 
 # Homebrew
 if which brew >/dev/null 2>&1; then

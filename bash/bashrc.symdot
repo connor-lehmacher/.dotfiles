@@ -27,4 +27,9 @@ elif [ -f "/etc/bash_completion" ]; then
     source "/etc/bash_completion"
 fi
 
+# set up tex live
+#PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH; export PATH
+#MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH; export MANPATH
+#INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH; export INFOPATH
+
 [ -f "$HOME/.local.bash" ] && source "$HOME/.local.bash" || true
