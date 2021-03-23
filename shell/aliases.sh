@@ -28,9 +28,6 @@ function vial {
     source "$DOTFILES/shell/aliases.sh"
 }
 
-# latexmk default pdf mode
-alias latexmk='latexmk -pdfdvi'
-
 # gpg to make it have a easier alias
 alias gpg="gpg2"
 

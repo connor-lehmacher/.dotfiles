@@ -77,6 +77,7 @@ Plug 'vim-airline/vim-airline'
     \| Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'altercation/vim-colors-solarized'
+Plug 'joshdick/onedark.vim'
 
 " c#
 

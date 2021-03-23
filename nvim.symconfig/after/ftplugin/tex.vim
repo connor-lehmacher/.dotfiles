@@ -20,13 +20,13 @@ nnoremap <buffer> <LocalLeader>s :VimtexCompile<CR>
 nnoremap <buffer> <LocalLeader>e :VimtexErrors<CR>
 nnoremap <buffer> <LocalLeader>c :!md5 %:r.pdf<CR>
 
-" let b:deoplete_omni_input_patterns = '\\(?:'
-"     \ .  '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
-"     \ . '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'
-"     \ . '|hyperref\s*\[[^]]*'
-"     \ . '|includegraphics\*?(?:\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-"     \ . '|(?:include(?:only)?|input)\s*\{[^}]*'
-"     \ . '|\w*(gls|Gls|GLS)(pl)?\w*(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-"     \ . '|includepdf(\s*\[[^]]*\])?\s*\{[^}]*'
-"     \ . '|includestandalone(\s*\[[^]]*\])?\s*\{[^}]*'
-"     \ . ')'
+let g:vimtex_compiler_latexmk_engines = {
+        \ '_'                : '-lualatex',
+        \ 'pdflatex'         : '-pdf',
+        \ 'dvipdfex'         : '-pdfdvi',
+        \ 'lualatex'         : '-lualatex',
+        \ 'xelatex'          : '-xelatex',
+        \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
+        \ 'context (luatex)' : '-pdf -pdflatex=context',
+        \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
+        \}
