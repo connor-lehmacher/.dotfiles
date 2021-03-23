@@ -49,18 +49,20 @@ fi
 cond_path_add "/usr/local/go/bin"
 
 # set up tex live
-cond_path_add "/usr/local/texlive/2019/bin/x86_64-linux" 
-MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH; export MANPATH
-INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH; export INFOPATH
+if [ ! -z "$LINUX" ]; then
+  cond_path_add "/usr/local/texlive/2019/bin/x86_64-linux"
+  MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH; export MANPATH
+  INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH; export INFOPATH
+elif [ ! -z "$DARWIN" ]; then
+  cond_path_add "/Library/TeX/texbin"
+  MANPATH=/Library/TeX/Distributions/.DefaultTeX/Contents/Man:$MANPATH; export MANPATH
+  INFOPATH=/Library/TeX/Distributions/.DefaultTeX/Contents/Info:$INFOPATH; export INFOPATH
+fi
 
 
 # Homebrew
-if which brew >/dev/null 2>&1; then
-    BREW_PREFIX="$(brew --prefix)"
-
-    PATH="$BREW_PREFIX/bin:$PATH"
-    PATH="$BREW_PREFIX/sbin:$PATH"
-    MANPATH="$BREW_PREFIX/share/man:$MANPATH"
+if [ -f /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # OPAM configuration

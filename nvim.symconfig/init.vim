@@ -23,7 +23,6 @@ set smartindent
 set smarttab
 
 " ui
-silent! colorscheme solarized
 set mouse=a
 set scrolloff=4
 set showcmd
