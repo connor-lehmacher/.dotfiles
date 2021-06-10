@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 # Editor variables
 if nvim --version >/dev/null 2>&1; then
     EDITOR='nvim'
@@ -68,11 +68,11 @@ fi
 # OPAM configuration
 . /Users/devin/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
-# Add Haskell bin to the path
 if [ -d "$HOME/Library/Haskell/" ]; then
     PATH="$PATH:$HOME/Library/Haskell/bin"
     MANPATH="$MANPATH:$HOME/Library/Haskell/share/man"
 fi
+cond_path_add "$HOME/.ghcup/bin" # haskell binaries from ghcup
 
 # Add fzf to path
 if [ -d "$HOME/.fzf" ]; then
