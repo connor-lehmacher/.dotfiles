@@ -12,7 +12,7 @@ setlocal wrap linebreak
 nnoremap <buffer> j gj
 nnoremap <buffer> k gk
 nnoremap <buffer> 0 g0
-nnoremap <buffer> $ g$
+noremap <buffer> $ g$
 
 nnoremap <buffer> <LocalLeader>o :!open %:r.pdf<CR><CR>
 nnoremap <buffer> <LocalLeader>m :make<CR>

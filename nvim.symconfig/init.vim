@@ -74,7 +74,7 @@ if has('nvim')
 end
 
 " polyglot
-let g:polyglot_disabled = ['latex']
+"let g:polyglot_disabled = ['latex']
 
 " deoplete
 if has('nvim')
