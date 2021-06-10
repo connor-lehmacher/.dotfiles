@@ -64,7 +64,6 @@ Plug 'FrigoEU/psc-ide-vim'
 
 " haskell
 Plug 'neovimhaskell/haskell-vim'
-Plug 'parsonsmatt/intero-neovim'
 
 " rust
 Plug 'rust-lang/rust.vim'
