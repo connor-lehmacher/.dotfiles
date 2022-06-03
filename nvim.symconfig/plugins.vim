@@ -64,6 +64,7 @@ Plug 'FrigoEU/psc-ide-vim'
 
 " haskell
 Plug 'neovimhaskell/haskell-vim'
+Plug 'sdiehl/vim-ormolu'
 
 " rust
 Plug 'rust-lang/rust.vim'

@@ -50,6 +50,17 @@ set belloff=all
 let g:airline#extensions#whitespace#mixed_indent_algo = 2
 let g:netrw_liststyle = 3
 
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+    set pastetoggle=<Esc>[201~
+    set paste
+    return ""
+endfunction
+
 " fix delay when exiting insert mode
 if !has('nvim')
     set noesckeys
@@ -116,6 +127,10 @@ if has('nvim')
     tnoremap <C-\>l <C-\><C-n><C-w><C-l>
     tnoremap <C-\>h <C-\><C-n><C-w><C-h>
 end
+
+" Natural Vim Splits
+set splitbelow
+set splitright
 
 " Leader mappings
 let mapleader=" "

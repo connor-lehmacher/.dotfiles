@@ -48,6 +48,11 @@ fi
 # Go
 cond_path_add "/usr/local/go/bin"
 
+#Ruby
+source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.2
+
 # set up tex live
 if [ ! -z "$LINUX" ]; then
   cond_path_add "/usr/local/texlive/2019/bin/x86_64-linux"
