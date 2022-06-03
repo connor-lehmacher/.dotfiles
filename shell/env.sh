@@ -48,10 +48,6 @@ fi
 # Go
 cond_path_add "/usr/local/go/bin"
 
-#Ruby
-source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
-source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.1.2
 
 # set up tex live
 if [ ! -z "$LINUX" ]; then
@@ -64,11 +60,11 @@ elif [ ! -z "$DARWIN" ]; then
   INFOPATH=/Library/TeX/Distributions/.DefaultTeX/Contents/Info:$INFOPATH; export INFOPATH
 fi
 
-
 # Homebrew
 if [ -f /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
 
 # OPAM configuration
 . /Users/devin/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
@@ -97,6 +93,13 @@ fi
 cond_path_add "/mnt/c/ProgramData/chocolatey/bin" # chocolatey installations
 cond_path_add "/mnt/c/Windows/System32" # cmd.exe
 cond_path_add "/mnt/c/Windows/System32/WindowsPowerShell/v1.0" # powershell.exe
+
+#Ruby
+if [ -d “$(brew --prefix)/opt/chruby/share/chruby” ]; then
+  source “$(brew --prefix)/opt/chruby/share/chruby/chruby.sh”
+  source “$(brew --prefix)/opt/chruby/share/chruby/auto.sh”
+  chruby ruby-3.1.2
+fi
 
 # Remove inconsistent path entries and export
 if [ -f "$DOTFILES/bin/consolidate-path" ]; then
