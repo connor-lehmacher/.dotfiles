@@ -6,11 +6,7 @@
 alias grep='grep --color=auto'
 
 # ls
-if [ -n "$DARWIN" ]; then
-    alias ls='gls --color=auto'
-else
-    alias ls='ls --color=auto'
-fi
+alias ls='ls --color=auto'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alFh'
@@ -37,16 +33,6 @@ alias :e="\$EDITOR"
 alias vi="\$EDITOR"
 alias vim="\$EDITOR"
 alias nvim="\$EDITOR"
-
-# Ed prompt
-alias ed="ed -p:"
-
-# Summon a random kitten
-alias kitten="curl -s https://placekitten.com/\$(shuf -i 300-1000 -n 1)/\
-\$(shuf -i 300-1000 -n 1) | imgcat"
-
-# make java_home accessible
-alias java_home='/usr/libexec/java_home'
 
 # work with plist files
 alias PlistBuddy='/usr/libexec/PlistBuddy'
