@@ -33,22 +33,6 @@ cond_path_add "$DOTFILES/bin"
 # Local bin
 cond_path_add "$HOME/.local/bin"
 
-# Rust
-if [ -d "$HOME/.cargo" ]; then
-    # Cargo bin
-    PATH="$HOME/.cargo/bin:$PATH"
-    # PATH="$HOME/.cargo/bin:$PATH"
-    # Rust src folder
-    # toolchain="$(rustup toolchain list | awk '/\(default\)/{print $1}')"
-    # RUST_HOME="$HOME/.rustup/toolchains/$toolchain"
-    # PATH="$RUST_HOME/bin:$PATH"
-    # export RUST_SRC_PATH="$HOME/.rustup/toolchains/$toolchain/lib/rustlib/src/rust/src"
-fi
-
-# Go
-cond_path_add "/usr/local/go/bin"
-
-
 # set up tex live
 if [ ! -z "$LINUX" ]; then
   cond_path_add "/usr/local/texlive/2019/bin/x86_64-linux"
@@ -92,13 +76,6 @@ fi
 cond_path_add "/mnt/c/ProgramData/chocolatey/bin" # chocolatey installations
 cond_path_add "/mnt/c/Windows/System32" # cmd.exe
 cond_path_add "/mnt/c/Windows/System32/WindowsPowerShell/v1.0" # powershell.exe
-
-#Ruby
-if [ -d "$(brew --prefix)/opt/chruby/share/chruby" ]; then
-  source "$(brew --prefix)/opt/chruby/share/chruby/chruby.sh"
-  source "$(brew --prefix)/opt/chruby/share/chruby/auto.sh"
-  chruby ruby-3.1.2
-fi
 
 # Remove inconsistent path entries and export
 if [ -f "$DOTFILES/bin/consolidate-path" ]; then
