@@ -50,6 +50,9 @@ set belloff=all
 let g:airline#extensions#whitespace#mixed_indent_algo = 2
 let g:netrw_liststyle = 3
 
+set background=light
+colorscheme default
+
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
